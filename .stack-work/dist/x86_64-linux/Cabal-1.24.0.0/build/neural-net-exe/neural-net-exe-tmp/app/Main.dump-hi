@@ -1,0 +1,803 @@
+
+==================== FINAL INTERFACE ====================
+2016-11-27 22:52:41.626427 UTC
+
+interface main@main:Main 8001
+  interface hash: f6aef3bd713d265f0d680918040efae9
+  ABI hash: 05958d1fb771f7571a4155c77f8156e0
+  export-list hash: 90a29da61e7b8130a40064b213127ca2
+  orphan hash: 7919115dd2f414fcce505c3abdecfbf5
+  flag hash: a67568f74047d1b12ccefb35808866e0
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Main.alpha
+  Main.backPropagation
+  Main.forward
+  Main.forwardSig
+  Main.forwards
+  Main.hLearn
+  Main.hidden
+  Main.main
+  Main.neuralNet
+  Main.oLearn
+  Main.sigmoid
+  Main.step
+  Main.toDouble
+  Main.toDoubleArray
+  Main.training
+  Main.Input
+  Main.Neuron{Main.Neuron}
+module dependencies:
+package dependencies: base-4.9.0.0 ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+                      neural-net-0.1.0.0@neural-net-0.1.0.0-SYgV3Sx5uw5ZT4aENrU9C
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:Data.Functor 6fc476505db88d678632a4a838125f13
+import  -/  base-4.9.0.0:Data.OldList 0058409f994fb13ae0616e3f1e5b4dae
+import  -/  base-4.9.0.0:Debug.Trace ea8cb00328fe92825c831d5e7694bf0a
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Float 469226b1bc53433e95d0167dec5d0312
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:GHC.Show 952347a6ab730bcb25c0854d8bc6ca51
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  base-4.9.0.0:System.IO eb1d40aa793a4047069a5023f2ebcfe3
+import  -/  base-4.9.0.0:Text.Read 9c1be14f7e5eac8b18bcb566c5763677
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+import  -/  ghc-prim-0.5.0.0:GHC.Types 7378e41b7749213c8c88ceb6b0665d4c
+import  -/  neural-net-0.1.0.0@neural-net-0.1.0.0-SYgV3Sx5uw5ZT4aENrU9C:Lib ab454b9cc966b6ae7803289afe7d2664
+e740685993989ee36c737d116338dc71
+  $fShowNeuron :: GHC.Show.Show Main.Neuron
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Main.Neuron
+                  Main.$fShowNeuron_$cshowsPrec
+                  Main.$fShowNeuron_$cshow
+                  Main.$fShowNeuron_$cshowList -}
+e740685993989ee36c737d116338dc71
+  $fShowNeuron1 :: Main.Neuron -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Main.Neuron) ->
+                 case w of ww { Main.Neuron ww1 ww2 ->
+                 Main.$w$cshowsPrec 0# ww1 ww2 }) -}
+8519a825e7d7a28c5fadd14a615a0272
+  $fShowNeuron2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Neuron "#) -}
+5e9c036878a7d3d77c507dcfee188902
+  $fShowNeuron3 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 11#) -}
+e740685993989ee36c737d116338dc71
+  $fShowNeuron_$cshow :: Main.Neuron -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(1*U,1*U(U))>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Main.Neuron) ->
+                 case w of ww { Main.Neuron ww1 ww2 -> Main.$w$cshow ww1 ww2 }) -}
+e740685993989ee36c737d116338dc71
+  $fShowNeuron_$cshowList :: [Main.Neuron] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Main.Neuron
+                   Main.$fShowNeuron1) -}
+e740685993989ee36c737d116338dc71
+  $fShowNeuron_$cshowsPrec ::
+    GHC.Types.Int -> Main.Neuron -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U(U,1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Main.Neuron) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Main.Neuron ww3 ww4 ->
+                 Main.$w$cshowsPrec ww1 ww3 ww4 } }) -}
+5797a88982c5ba96ab7690687ce8808b
+  $sread :: GHC.Base.String -> GHC.Types.Double
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GHC.Base.String) ->
+                 case Text.Read.readEither
+                        @ GHC.Types.Double
+                        GHC.Read.$fReadDouble
+                        s of wild {
+                   Data.Either.Left x
+                   -> GHC.Err.errorWithoutStackTrace
+                        @ 'GHC.Types.PtrRepLifted
+                        @ GHC.Types.Double
+                        x
+                   Data.Either.Right y -> y }) -}
+b80689a65e47472eae51b2780bdebbdb
+  $tc'Neuron :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   6549479909643859833##
+                   18270364993101740802##
+                   Main.$trModule
+                   Main.$tc'Neuron1) -}
+c6aa8f185a441435ed7549185533cbbd
+  $tc'Neuron1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Neuron"#) -}
+40264a1c25943f66172bfb3615bb415e
+  $tcNeuron :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   17318210578422232366##
+                   3149611441688559482##
+                   Main.$trModule
+                   Main.$tcNeuron1) -}
+845c302acca646c104704f84118a35f7
+  $tcNeuron1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Neuron"#) -}
+d6831ef04cb9301b090dfae6f7bb7ec7
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Main.$trModule2 Main.$trModule1) -}
+847d9fc3b8e6f0b424199f36b4999bb2
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Main"#) -}
+24ef6042833e75ffd7aa98b83ecca98d
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+cd4f50a6c1bc314bc57b07c65d3e094d
+  $w$cshow ::
+    [GHC.Types.Double] -> GHC.Types.Double -> GHC.Base.String
+  {- Arity: 2, Strictness: <L,1*U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: [GHC.Types.Double])
+                   (ww1 :: GHC.Types.Double) ->
+                 GHC.Base.++
+                   @ GHC.Types.Char
+                   Main.$fShowNeuron2
+                   (GHC.Show.showList__
+                      @ GHC.Types.Double
+                      GHC.Float.$fShowDouble1
+                      ww
+                      (GHC.Types.:
+                         @ GHC.Types.Char
+                         GHC.Show.showSpace1
+                         (case ww1 of ww2 { GHC.Types.D# ww3 ->
+                          GHC.Float.$w$sshowSignedFloat
+                            GHC.Float.$fShowDouble_$sshowFloat
+                            Main.$fShowNeuron3
+                            ww3
+                            (GHC.Types.[] @ GHC.Types.Char) })))) -}
+87ec362ccd3d2c958ed1582d4b5fa5d9
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> [GHC.Types.Double] -> GHC.Types.Double -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <S,U><L,U><L,1*U(U)>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: [GHC.Types.Double])
+                   (ww2 :: GHC.Types.Double) ->
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                   = case ww2 of ww3 { GHC.Types.D# ww4 ->
+                     GHC.Float.$w$sshowSignedFloat
+                       GHC.Float.$fShowDouble_$sshowFloat
+                       Main.$fShowNeuron3
+                       ww4 }
+                 } in
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Main.$fShowNeuron2
+                       (GHC.Show.showList__
+                          @ GHC.Types.Double
+                          GHC.Float.$fShowDouble1
+                          ww1
+                          (GHC.Types.: @ GHC.Types.Char GHC.Show.showSpace1 (g x)))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows9
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows6 x)) }) -}
+1414a4281ebf04b292cdf3236ed68d41
+  $wbackPropagation ::
+    GHC.Types.Double
+    -> [Main.Input]
+    -> [Main.Neuron]
+    -> Main.Neuron
+    -> (# GHC.Types.Double, [Main.Neuron], Main.Neuron #)
+  {- Arity: 4, Strictness: <L,U(U)><S,1*U><L,U><L,U(U,U(U))>,
+     Inline: [0] -}
+7fdba2d7daa2fa3a45deb063b6b1df1f
+  $wgo ::
+    [GHC.Types.Double]
+    -> [GHC.Types.Double] -> GHC.Prim.Double# -> GHC.Prim.Double#
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,1*U><L,U>,
+     Inline: [0] -}
+72d530f0325cc896448a36a10b5100ea
+  $wgo1 ::
+    [GHC.Types.Double]
+    -> [GHC.Types.Double] -> GHC.Prim.Double# -> GHC.Prim.Double#
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,1*U><L,U>,
+     Inline: [0] -}
+dc1694f2911bf7bbb258f00fe423879a
+  $whLearn ::
+    [Main.Neuron]
+    -> [GHC.Types.Double]
+    -> [GHC.Types.Double]
+    -> Main.Input
+    -> GHC.Types.Double
+    -> [Main.Neuron]
+  {- Arity: 5, Strictness: <S,U><L,1*U><L,1*U><L,U><L,U(U)>,
+     Inline: [0],
+     Unfolding: (\ (w :: [Main.Neuron])
+                   (w1 :: [GHC.Types.Double])
+                   (ww :: [GHC.Types.Double])
+                   (w2 :: Main.Input)
+                   (w3 :: GHC.Types.Double) ->
+                 let {
+                   djList :: [GHC.Types.Double]
+                   = GHC.List.zipWith
+                       @ GHC.Types.Double
+                       @ GHC.Types.Double
+                       @ GHC.Types.Double
+                       (\ (wn :: GHC.Types.Double) (hOut1 :: GHC.Types.Double)[OneShot] ->
+                        case hOut1 of wild { GHC.Types.D# x ->
+                        case wn of wild1 { GHC.Types.D# y ->
+                        case Main.hLearn_go1
+                               w2
+                               (GHC.List.lastError
+                                  @ GHC.Types.Double) of wild2 { GHC.Types.D# x1 ->
+                        case w3 of wild3 { GHC.Types.D# y1 ->
+                        GHC.Types.D#
+                          (GHC.Prim.*##
+                             (GHC.Prim.*##
+                                (GHC.Prim.*##
+                                   (GHC.Prim.*## (GHC.Prim.*## x (GHC.Prim.-## 1.0## x)) y)
+                                   (GHC.Prim.-## x1 y1))
+                                y1)
+                             (GHC.Prim.-## 1.0## y1)) } } } })
+                       ww
+                       w1
+                 } in
+                 Main.hLearn_go
+                   w
+                   (GHC.List.zipWith
+                      @ GHC.Types.Double
+                      @ GHC.Types.Double
+                      @ GHC.Types.Double
+                      Main.hLearn3
+                      w2
+                      djList)
+                   (GHC.List.zipWith
+                      @ Main.Neuron
+                      @ GHC.Types.Double
+                      @ GHC.Types.Double
+                      Main.hLearn2
+                      w
+                      (GHC.Base.map
+                         @ GHC.Types.Double
+                         @ GHC.Types.Double
+                         Main.hLearn1
+                         djList))) -}
+0032317e2b30c19b4e43e6d39afd93c6
+  $woLearn ::
+    [GHC.Types.Double]
+    -> GHC.Types.Double
+    -> [GHC.Types.Double]
+    -> Main.Input
+    -> GHC.Types.Double
+    -> (# [GHC.Types.Double], GHC.Types.Double #)
+  {- Arity: 5, Strictness: <L,1*U><L,1*U(U)><L,1*U><L,1*U><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: [GHC.Types.Double])
+                   (ww1 :: GHC.Types.Double)
+                   (w :: [GHC.Types.Double])
+                   (w1 :: Main.Input)
+                   (w2 :: GHC.Types.Double) ->
+                 let {
+                   d :: GHC.Types.Double
+                   = case Main.oLearn_go
+                            w1
+                            (GHC.List.lastError @ GHC.Types.Double) of wild { GHC.Types.D# x ->
+                     case w2 of wild1 { GHC.Types.D# y ->
+                     GHC.Types.D#
+                       (GHC.Prim.*##
+                          (GHC.Prim.*## (GHC.Prim.-## x y) y)
+                          (GHC.Prim.-## 1.0## y)) } }
+                 } in
+                 (# GHC.List.zipWith
+                      @ GHC.Types.Double
+                      @ GHC.Types.Double
+                      @ GHC.Types.Double
+                      GHC.Float.plusDouble
+                      ww
+                      (GHC.Base.map
+                         @ GHC.Types.Double
+                         @ GHC.Types.Double
+                         (\ (x :: GHC.Types.Double) ->
+                          case x of wild { GHC.Types.D# x1 ->
+                          case d of wild1 { GHC.Types.D# y ->
+                          GHC.Types.D# (GHC.Prim.*## (GHC.Prim.*## x1 y) 10.0##) } })
+                         w),
+                    case ww1 of wild { GHC.Types.D# x ->
+                    case d of wild1 { GHC.Types.D# y ->
+                    GHC.Types.D# (GHC.Prim.+## x (GHC.Prim.*## -10.0## y)) } } #)) -}
+9334856429249e853a8bfd77514b9586
+  $wtraining ::
+    GHC.Prim.Double#
+    -> [Main.Input]
+    -> [Main.Neuron]
+    -> Main.Neuron
+    -> (GHC.Types.Double, [Main.Neuron], Main.Neuron)
+  {- Arity: 4, Strictness: <S,U><L,U><L,U><L,U(U,U(U))>,
+     Inline: [0] -}
+295c1e3b558acc15d961d9dfca7b96d1
+  type Input = [GHC.Types.Double]
+e740685993989ee36c737d116338dc71
+  data Neuron = Neuron [GHC.Types.Double] GHC.Types.Double
+e4a3fdbea12b87fda45109ad41694f62
+  alpha :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 10.0##) -}
+928f8e23e30bf500a86370a096085df9
+  backPropagation ::
+    GHC.Types.Double
+    -> [Main.Input]
+    -> [Main.Neuron]
+    -> Main.Neuron
+    -> (GHC.Types.Double, [Main.Neuron], Main.Neuron)
+  {- Arity: 4, Strictness: <L,U(U)><S,1*U><L,U><L,U(U,U(U))>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: GHC.Types.Double)
+                   (w1 :: [Main.Input])
+                   (w2 :: [Main.Neuron])
+                   (w3 :: Main.Neuron) ->
+                 case Main.$wbackPropagation
+                        w
+                        w1
+                        w2
+                        w3 of ww { (#,,#) ww1 ww2 ww3 ->
+                 (ww1, ww2, ww3) }) -}
+52795624289e2db551b18f96a041efe3
+  forward :: Main.Input -> Main.Neuron -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U><S(LS(S)),1*U(1*U,1*U(U))>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Input) (w1 :: Main.Neuron) ->
+                 case w1 of ww { Main.Neuron ww1 ww2 ->
+                 case ww2 of ww3 { GHC.Types.D# ww4 ->
+                 case Main.$wgo w ww1 0.0## of ww5 { DEFAULT ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=## (GHC.Prim.-## ww5 ww4) 0.0##) of wild {
+                   GHC.Types.False -> GHC.Types.D# 0.0##
+                   GHC.Types.True -> GHC.Types.D# 1.0## } } } }) -}
+89230166925ef9f457fd7619d6d0e07d
+  forwardSig :: Main.Input -> Main.Neuron -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U><S(LS(S)),1*U(1*U,1*U(U))>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Main.Input) (w1 :: Main.Neuron) ->
+                 case w1 of ww { Main.Neuron ww1 ww2 ->
+                 case ww2 of ww3 { GHC.Types.D# ww4 ->
+                 case Main.$wgo1 w ww1 0.0## of ww5 { DEFAULT ->
+                 case GHC.Prim./##
+                        1.0##
+                        (GHC.Prim.+##
+                           1.0##
+                           (GHC.Prim.expDouble#
+                              (GHC.Prim.negateDouble#
+                                 (GHC.Prim.-## ww5 ww4)))) of ww6 { DEFAULT ->
+                 GHC.Types.D# ww6 } } } }) -}
+6c4a209bd4e32e4756dfb6123f8418f7
+  forwards :: [Main.Input] -> Main.Neuron -> [GHC.Types.Double]
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U(U,U(U))>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (inputs :: [Main.Input]) (neuron :: Main.Neuron) ->
+                 GHC.Base.build
+                   @ GHC.Types.Double
+                   (\ @ b1
+                      (c :: GHC.Types.Double -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ [GHC.Types.Double]
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Double
+                         @ b1
+                         @ [GHC.Types.Double]
+                         c
+                         (\ (ds :: Main.Input) -> Main.forward ds neuron))
+                      n
+                      inputs)) -}
+c402c811506331ecd5241ff797332e68
+  hLearn ::
+    [Main.Neuron]
+    -> [GHC.Types.Double]
+    -> Main.Neuron
+    -> Main.Input
+    -> GHC.Types.Double
+    -> [Main.Neuron]
+  {- Arity: 5, Strictness: <S,U><L,1*U><S,1*U(1*U,A)><L,U><L,U(U)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (5, True, False)
+                (\ (w :: [Main.Neuron])
+                   (w1 :: [GHC.Types.Double])
+                   (w2 :: Main.Neuron)
+                   (w3 :: Main.Input)
+                   (w4 :: GHC.Types.Double) ->
+                 case w2 of ww { Main.Neuron ww1 ww2 ->
+                 Main.$whLearn w w1 ww1 w3 w4 }) -}
+766480ff7861edb46dd5e2d1d2ea7d87
+  hLearn1 :: GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (dj :: GHC.Types.Double) ->
+                 case dj of wild1 { GHC.Types.D# y ->
+                 GHC.Types.D# (GHC.Prim.*## -10.0## y) }) -}
+0395fb40b9cbc2d8d32ee6474e6de49d
+  hLearn2 :: Main.Neuron -> GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S(LS(S)),1*U(A,1*U(U))><S(S),1*U(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Main.Neuron) (fixT :: GHC.Types.Double)[OneShot] ->
+                 case ds of wild { Main.Neuron ds1 vh ->
+                 GHC.Float.plusDouble vh fixT }) -}
+4ac9c381666ddf058600365949e7c87e
+  hLearn3 :: GHC.Types.Double -> GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs, Strictness: <S(S),1*U(U)><S(S),1*U(U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (input :: GHC.Types.Double) (dj :: GHC.Types.Double)[OneShot] ->
+                 case input of wild1 { GHC.Types.D# y ->
+                 case dj of wild2 { GHC.Types.D# y1 ->
+                 GHC.Types.D# (GHC.Prim.*## (GHC.Prim.*## 10.0## y) y1) } }) -}
+66de44b78fdc9b042e6044625eabf480
+  hLearn_go ::
+    [Main.Neuron]
+    -> [GHC.Types.Double] -> [GHC.Types.Double] -> [Main.Neuron]
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,1*U><L,1*U> -}
+5ec4e4e2d74d1ae27435cafba286beeb
+  hLearn_go1 ::
+    [GHC.Types.Double] -> GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+5cb025c77e592ce8dcf36bc7e39ff841
+  hidden :: Main.Input -> [Main.Neuron] -> [GHC.Types.Double]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (input :: Main.Input) (eta :: [Main.Neuron]) ->
+                 GHC.Base.build
+                   @ GHC.Types.Double
+                   (\ @ b1
+                      (c :: GHC.Types.Double -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ Main.Neuron
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Double
+                         @ b1
+                         @ Main.Neuron
+                         c
+                         (Main.forward input))
+                      n
+                      eta)) -}
+b4977ed0b9973550d6d9b6f795f7bb12
+  main :: GHC.Types.IO ()
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: InlineRule (0, True, True)
+                Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
+e52938708b7e261536c8d5b84dcfa7e6
+  main1 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1, Strictness: <S,U>,
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.main26
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 GHC.IO.Handle.Text.hPutStr2
+                   GHC.IO.Handle.FD.stdout
+                   (case Main.$wtraining
+                           100.0##
+                           (GHC.Base.map
+                              @ [GHC.Types.Char]
+                              @ [GHC.Types.Double]
+                              Main.main24
+                              (Data.OldList.lines ipv3))
+                           Main.main11
+                           Main.main3 of ww { (,,) ww1 ww2 ww3 ->
+                    GHC.Types.:
+                      @ GHC.Types.Char
+                      GHC.Show.shows9
+                      (case ww1 of ww4 { GHC.Types.D# ww5 ->
+                       GHC.Float.$w$sshowSignedFloat
+                         GHC.Float.$fShowDouble_$sshowFloat
+                         GHC.Show.shows22
+                         ww5
+                         (GHC.Types.:
+                            @ GHC.Types.Char
+                            GHC.Show.shows7
+                            (GHC.Show.$fShow(,,)_$sgo
+                               Main.main2
+                               (\ (eta :: GHC.Base.String) ->
+                                GHC.Show.showList__ @ Main.Neuron Main.$fShowNeuron1 ww2 eta)
+                               (GHC.Types.:
+                                  @ GHC.Show.ShowS
+                                  (case ww3 of ww6 { Main.Neuron ww7 ww8 ->
+                                   Main.$w$cshowsPrec 0# ww7 ww8 })
+                                  (GHC.Types.[] @ GHC.Show.ShowS)))) }) })
+                   GHC.Types.True
+                   ipv2 } }) -}
+7983d1a0b344a889caf9cec8289131f0
+  main10 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# -60.0##) -}
+67b97cc2c31e77945cacc4bcaac579d7
+  main11 :: [Main.Neuron]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.: @ Main.Neuron Main.main20 Main.main12) -}
+ada4e80dce5e046da2e3bb0ddbdfaa8d
+  main12 :: [Main.Neuron]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ Main.Neuron
+                   Main.main13
+                   (GHC.Types.[] @ Main.Neuron)) -}
+7eced060c5b1d90e18c5e0450c71edb2
+  main13 :: Main.Neuron
+  {- HasNoCafRefs,
+     Unfolding: (Main.Neuron Main.main15 Main.main14) -}
+16d66126c735968dc57d6310f14585d7
+  main14 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 0.5##) -}
+0a4ef1a855a7f38e19ee0ab313ef9ea5
+  main15 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main19
+                   Main.main16) -}
+56065e1233d7050fc8f2a9d520684326
+  main16 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main18
+                   Main.main17) -}
+810429af343fef7609f5758201f02772
+  main17 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main18
+                   (GHC.Types.[] @ GHC.Types.Double)) -}
+099b5fe702a04228c903f15f2b7a84dd
+  main18 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 1.0##) -}
+f34d5daba42b8374ff8e50abf4563986
+  main19 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# -2.0##) -}
+10f41f56040aab55b8e4fc33db91fa74
+  main2 :: [GHC.Types.Char]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+fd739fb8ae64818c3581162ac6ca2487
+  main20 :: Main.Neuron
+  {- HasNoCafRefs, Unfolding: (Main.Neuron Main.main21 Main.main4) -}
+8fb5d6e702acde8ddbb5675dca519a2a
+  main21 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main19
+                   Main.main22) -}
+a9860222cfbb1129201b9f18cab889f0
+  main22 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main23
+                   Main.main17) -}
+a8e87c01b16fb41943b40b83073d948f
+  main23 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 3.0##) -}
+6f9b07520c9c3625b4cf6808b6e4a153
+  main24 :: GHC.Base.String -> [GHC.Types.Double]
+  {- Arity: 1,
+     Unfolding: (\ (x :: GHC.Base.String) ->
+                 Data.OldList.wordsFB
+                   @ [GHC.Types.Double]
+                   Main.main25
+                   (GHC.Types.[] @ GHC.Types.Double)
+                   x) -}
+838fdcb73e676f3d0dd988b61d86beb5
+  main25 ::
+    [GHC.Types.Char] -> [GHC.Types.Double] -> [GHC.Types.Double]
+  {- Arity: 2,
+     Unfolding: (\ (x :: [GHC.Types.Char])
+                   (ys :: [GHC.Types.Double])[OneShot] ->
+                 GHC.Types.: @ GHC.Types.Double (Main.$sread x) ys) -}
+48d39215b134ec34caa823b920782719
+  main26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "input/majority.txt"#) -}
+ba084fc52cd31b08df7fb277dc612282
+  main27 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+0d14575c084661f3ed84550f69633137
+  main3 :: Main.Neuron
+  {- HasNoCafRefs, Unfolding: (Main.Neuron Main.main5 Main.main4) -}
+baeb3b62fc600c92ac9f014c156066d1
+  main4 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# -1.0##) -}
+6ac49db2b0b5bc146730f621fc85f3f0
+  main5 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main10
+                   Main.main6) -}
+69d8e666e5921fd4d5f00e5f44d2c677
+  main6 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main9
+                   Main.main7) -}
+c1143dac1b7160fb4c9a44d69a1e5f60
+  main7 :: [GHC.Types.Double]
+  {- HasNoCafRefs,
+     Unfolding: (GHC.Types.:
+                   @ GHC.Types.Double
+                   Main.main8
+                   (GHC.Types.[] @ GHC.Types.Double)) -}
+906e11b7eae7523e064aea83e91d6165
+  main8 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 50.0##) -}
+4e7ddca838ce25191e1bb11cd170edb6
+  main9 :: GHC.Types.Double
+  {- HasNoCafRefs, Unfolding: (GHC.Types.D# 94.0##) -}
+101953455b5daea122511f588fdef385
+  neuralNet ::
+    [Main.Input] -> [Main.Neuron] -> Main.Neuron -> [GHC.Types.Double]
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,U><L,U(U,U(U))>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (inputs :: [Main.Input])
+                   (hiddenN :: [Main.Neuron])
+                   (outN :: Main.Neuron) ->
+                 GHC.Base.build
+                   @ GHC.Types.Double
+                   (\ @ b1
+                      (c :: GHC.Types.Double -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ [GHC.Types.Double]
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Double
+                         @ b1
+                         @ [GHC.Types.Double]
+                         c
+                         (\ (x :: [GHC.Types.Double]) ->
+                          Main.forward (Main.hidden x hiddenN) outN))
+                      n
+                      inputs)) -}
+a93a515cd9810be6d4a421e0a762a7b2
+  oLearn ::
+    Main.Neuron
+    -> [GHC.Types.Double]
+    -> Main.Input
+    -> GHC.Types.Double
+    -> Main.Neuron
+  {- Arity: 4,
+     Strictness: <S,1*U(1*U,1*U(U))><L,1*U><L,1*U><L,1*U(U)>m,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: Main.Neuron)
+                   (w1 :: [GHC.Types.Double])
+                   (w2 :: Main.Input)
+                   (w3 :: GHC.Types.Double) ->
+                 case w of ww { Main.Neuron ww1 ww2 ->
+                 case Main.$woLearn ww1 ww2 w1 w2 w3 of ww3 { (#,#) ww4 ww5 ->
+                 Main.Neuron ww4 ww5 } }) -}
+9856ef9d5a963dbbc8119fadd1965f48
+  oLearn_go ::
+    [GHC.Types.Double] -> GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,1*U(U)> -}
+97ab67b6b243e7406f0ef7690f1b5968
+  sigmoid :: GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (u :: GHC.Types.Double) ->
+                 case u of wild { GHC.Types.D# x ->
+                 case GHC.Prim./##
+                        1.0##
+                        (GHC.Prim.+##
+                           1.0##
+                           (GHC.Prim.expDouble#
+                              (GHC.Prim.negateDouble# x))) of wild2 { DEFAULT ->
+                 GHC.Types.D# wild2 } }) -}
+69da15519471c4148a54ed159493ceb4
+  step :: GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (u :: GHC.Types.Double) ->
+                 case u of wild { GHC.Types.D# x ->
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=## x 0.0##) of wild1 {
+                   GHC.Types.False -> Main.step1 GHC.Types.True -> Main.main18 } }) -}
+e32f6f0b56450b27574af5da1c4b0a3a
+  step1 :: GHC.Types.Double
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.D# 0.0##) -}
+0e5c57b89dc4c5bc441eebd1b41dd70c
+  toDouble :: GHC.Base.String -> GHC.Types.Double
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GHC.Base.String) ->
+                 case Text.Read.readEither
+                        @ GHC.Types.Double
+                        GHC.Read.$fReadDouble
+                        s of wild {
+                   Data.Either.Left x
+                   -> GHC.Err.errorWithoutStackTrace
+                        @ 'GHC.Types.PtrRepLifted
+                        @ GHC.Types.Double
+                        x
+                   Data.Either.Right y -> y }) -}
+704feb7694fd589d78d8e8bc75177b51
+  toDoubleArray :: [GHC.Base.String] -> [GHC.Types.Double]
+  {- Arity: 1,
+     Unfolding: (GHC.Base.map
+                   @ GHC.Base.String
+                   @ GHC.Types.Double
+                   Main.$sread) -}
+6d4610fdc7f31e71a75cc7d4f15e8424
+  training ::
+    GHC.Types.Double
+    -> [Main.Input]
+    -> [Main.Neuron]
+    -> Main.Neuron
+    -> (GHC.Types.Double, [Main.Neuron], Main.Neuron)
+  {- Arity: 4, Strictness: <S(S),1*U(U)><L,U><L,U><L,U(U,U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (4, True, False)
+                (\ (w :: GHC.Types.Double)
+                   (w1 :: [Main.Input])
+                   (w2 :: [Main.Neuron])
+                   (w3 :: Main.Neuron) ->
+                 case w of ww { GHC.Types.D# ww1 ->
+                 Main.$wtraining ww1 w1 w2 w3 }) -}
+instance GHC.Show.Show [Main.Neuron] = Main.$fShowNeuron
+"SPEC/Main read @ Double" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                       GHC.Types.Double)
+  Text.Read.read @ GHC.Types.Double $dRead = Main.$sread
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

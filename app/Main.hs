@@ -34,7 +34,7 @@ sigmoid :: Double -> Double
 sigmoid u = 1 / (1 + exp (-u))
 
 hidden :: Input -> [Neuron] -> [Double]
-hidden input  = map (forward input)
+hidden input  = map (forwardSig input)
 
 neuralNet :: [Input] -> [Neuron] -> Neuron -> [Double]
 neuralNet inputs hiddenN outN =
@@ -74,6 +74,7 @@ backPropagation err (x:xs) hiddenN outN =
 training :: Double -> [Input] -> [Neuron] -> Neuron -> (Double, [Neuron], Neuron)
 training err inputs hiddenN outN
   | err <= limit = (err, hiddenN, outN)
+  | err == 4.0 = (err, hiddenN, outN)
   | otherwise =  trace (show err) $ training err' inputs hiddenN' outN'
   where
     limit = 0.001
@@ -82,12 +83,12 @@ training err inputs hiddenN outN
 
 main :: IO ()
 main = do
-  -- s <- readFile "input/data.txt"
   s <- readFile "input/majority.txt"
   let inputs = (toDoubleArray . words) <$> lines s
       -- neuronAND = Neuron [1,1] 1.5
-      hiddenNeurons = [Neuron [-2,3,1] (-1), Neuron [-2,1,1] 0.5]
+      hiddenNeurons = [Neuron [-2,3,1] (-1), Neuron [-2,1,1] 0.5, Neuron [1,1,1] 0.3]
       outNeuron = Neuron [-60,94,50] (-1)
   -- print $ forwards inputs (Neuron [1,1] 1.5)
   -- print $ neuralNet inputs hiddenNeurons outNeuron
+
   print $ training 100 inputs hiddenNeurons outNeuron

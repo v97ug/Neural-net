@@ -1,0 +1,146 @@
+
+==================== FINAL INTERFACE ====================
+2016-12-03 04:16:58.563258 UTC
+
+interface neural-net-0.1.0.0-SYgV3Sx5uw5ZT4aENrU9C:NeuralNetSigmoid 8001
+  interface hash: cbbb45bbf3a01832a7d51605655ee18c
+  ABI hash: ec66042bb58be299ba6eddf8247fdc15
+  export-list hash: 741a2e0c7aaaa96790493b3698965c8e
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: b159a15c55fa7c6870cb2eb79bbae5a5
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  NeuralNetSigmoid.forwardSig
+  NeuralNetSigmoid.hiddenSig
+  NeuralNetSigmoid.neuralNetSig
+  NeuralNetSigmoid.sigmoid
+module dependencies: Type
+package dependencies: base-4.9.0.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.0.0:GHC.Base base-4.9.0.0:GHC.Float
+family instance modules: base-4.9.0.0:Control.Applicative
+                         base-4.9.0.0:Data.Either base-4.9.0.0:Data.Functor.Const
+                         base-4.9.0.0:Data.Monoid base-4.9.0.0:Data.Type.Equality
+                         base-4.9.0.0:GHC.Generics base-4.9.0.0:GHC.IO.Exception
+                         base-4.9.0.0:GHC.TypeLits
+import  -/  base-4.9.0.0:Data.Foldable 8aeb682f6c74f97fcf0ace0d608a43ea
+import  -/  base-4.9.0.0:GHC.Base 8ed3be81c0707b322f975a84ae1bb816
+import  -/  base-4.9.0.0:GHC.Float 469226b1bc53433e95d0167dec5d0312
+import  -/  base-4.9.0.0:GHC.List 13d2451194c1c6e53b4f4f07947736dd
+import  -/  base-4.9.0.0:GHC.Num 48f506a8f4ecf06285d0a0706594dcc0
+import  -/  base-4.9.0.0:GHC.Real 08bf4acb5f2508f89d6fbcd57fe232e9
+import  -/  base-4.9.0.0:Prelude b9bddb97799837fe67a8d00939a5b6c3
+import  -/  Type f48ab537fd1248e12ff69cf644c6049f
+  exports: 1faf231b01dbc5294c5ce26a23f6b145
+  Input 602440102f78d29de4ed0f56b5b88ec2
+  Neuron d88d3f9b9224584cd291cf631eb06f6a
+  Neuron 97d1d92718a71249f87e582753e38144
+34110f4351e4c8bbc8d2ef26d43193fe
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   NeuralNetSigmoid.$trModule2
+                   NeuralNetSigmoid.$trModule1) -}
+04c1e870c330253633d1b172d4532852
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "NeuralNetSigmoid"#) -}
+19b07382491626a70eed90c62cd36bf5
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS
+                   "neural-net-0.1.0.0-SYgV3Sx5uw5ZT4aENrU9C"#) -}
+97e77362407667ec7b178b30ba276d29
+  $wgo ::
+    [GHC.Types.Double]
+    -> [GHC.Types.Double] -> GHC.Prim.Double# -> GHC.Prim.Double#
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,1*U><L,U>,
+     Inline: [0] -}
+35f1027f513b8a4dc081591c433ea21e
+  forwardSig :: Type.Input -> Type.Neuron -> GHC.Types.Double
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <S,1*U><S(LS(S)),1*U(1*U,1*U(U))>m, Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Type.Input) (w1 :: Type.Neuron) ->
+                 case w1 of ww { Type.Neuron ww1 ww2 ->
+                 case ww2 of ww3 { GHC.Types.D# ww4 ->
+                 case NeuralNetSigmoid.$wgo w ww1 0.0## of ww5 { DEFAULT ->
+                 case GHC.Prim./##
+                        1.0##
+                        (GHC.Prim.+##
+                           1.0##
+                           (GHC.Prim.expDouble#
+                              (GHC.Prim.negateDouble#
+                                 (GHC.Prim.-## ww5 ww4)))) of ww6 { DEFAULT ->
+                 GHC.Types.D# ww6 } } } }) -}
+6f04319d47e6f3671f2256021f9aa054
+  hiddenSig :: Type.Input -> [Type.Neuron] -> [GHC.Types.Double]
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (input :: Type.Input) (eta :: [Type.Neuron]) ->
+                 GHC.Base.build
+                   @ GHC.Types.Double
+                   (\ @ b1
+                      (c :: GHC.Types.Double -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ Type.Neuron
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Double
+                         @ b1
+                         @ Type.Neuron
+                         c
+                         (NeuralNetSigmoid.forwardSig input))
+                      n
+                      eta)) -}
+f68ecd4871c93460ed16f0d37e9d1729
+  neuralNetSig ::
+    [Type.Input] -> [Type.Neuron] -> Type.Neuron -> [GHC.Types.Double]
+  {- Arity: 3, HasNoCafRefs, Strictness: <S,1*U><L,U><L,U(U,U(U))>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (inputs :: [Type.Input])
+                   (hiddenN :: [Type.Neuron])
+                   (outN :: Type.Neuron) ->
+                 GHC.Base.build
+                   @ GHC.Types.Double
+                   (\ @ b1
+                      (c :: GHC.Types.Double -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ [GHC.Types.Double]
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Double
+                         @ b1
+                         @ [GHC.Types.Double]
+                         c
+                         (\ (x :: [GHC.Types.Double]) ->
+                          NeuralNetSigmoid.forwardSig
+                            (NeuralNetSigmoid.hiddenSig x hiddenN)
+                            outN))
+                      n
+                      inputs)) -}
+51f4294d1c6c495e09864a2b7b75636f
+  sigmoid :: GHC.Types.Double -> GHC.Types.Double
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(U)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (u :: GHC.Types.Double) ->
+                 case u of wild { GHC.Types.D# x ->
+                 case GHC.Prim./##
+                        1.0##
+                        (GHC.Prim.+##
+                           1.0##
+                           (GHC.Prim.expDouble#
+                              (GHC.Prim.negateDouble# x))) of wild2 { DEFAULT ->
+                 GHC.Types.D# wild2 } }) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

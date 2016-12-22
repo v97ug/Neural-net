@@ -24,8 +24,8 @@ testXOR = do
       results = neuralNetSig inputs resHiddenN resOutN
   mapM_ print $ zip (map init inputs) results
 
-main :: IO ()
-main = do
+testMajority :: IO ()
+testMajority = do
   s <- readFile "input/majority.txt"
   let inputs = (toDoubleArray . words) <$> lines s
       hiddenNeurons = [Neuron [-2,3,1] (-1), Neuron [-2,1,1] 0.5, Neuron [1,1,1] 0.3]
@@ -33,4 +33,8 @@ main = do
   -- print $ training 100 inputs hiddenNeurons outNeuron
   let (errors, _, _) = trainingProcess [100] inputs hiddenNeurons outNeuron
   print $ zip [1..] errors
+
+main :: IO ()
+main = do
+  testMajority
   -- testXOR

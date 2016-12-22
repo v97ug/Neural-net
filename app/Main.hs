@@ -6,6 +6,8 @@ import TrainingPict
 import Type
 import NeuralNetSigmoid
 import System.IO
+import Conv
+import Pool
 
 toDoubleArray :: [String] -> [Double]
 toDoubleArray = map toDouble
@@ -24,6 +26,7 @@ testXOR = do
       results = neuralNetSig inputs resHiddenN resOutN
   mapM_ print $ zip (map init inputs) results
 
+-- 多数決の学習をし、結果を表示する
 testMajority :: IO ()
 testMajority = do
   s <- readFile "input/majority.txt"
@@ -34,7 +37,23 @@ testMajority = do
   let (errors, _, _) = trainingProcess [100] inputs hiddenNeurons outNeuron
   print $ zip [1..] errors
 
+toInt' :: String -> Int
+toInt' s = read s :: Int
+
+strToIntArr :: String -> [[Int]]
+strToIntArr imageTxt =
+  let sList = words <$> lines imageTxt
+  in map (map toInt') sList
+
 main :: IO ()
 main = do
-  testMajority
+  -- testMajority
   -- testXOR
+  let imageFileNames = ["input/image1.txt", "input/image2.txt", "input/image3.txt"]
+  s <- sequence $ fmap readFile imageFileNames
+
+  let imgData = map strToIntArr s :: [[[Int]]]
+      filt = [[0,1,0], [0,1,0], [0,1,0]]
+      convOut = map (conv' filt) imgData :: [[[Int]]]
+      poolOut = map pooling convOut
+  print poolOut
